@@ -4,7 +4,7 @@ from time import process_time
 list_of_numbers_1 = [1, 2, 3, 4, 5]
 list_of_numbers_2 = [3, 2, 1]
 list_of_numbers_3 = [10, 15, 3, 7]
-list_of_numbers_4 = list(range(1, 10001))
+list_of_numbers_4 = list(range(1, 1001))
 
 def measureTime(method, n, *args):
     start = process_time()
