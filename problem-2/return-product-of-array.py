@@ -1,17 +1,18 @@
 
 from time import process_time
 
-list_of_numbers_1 = [1, 2, 3, 4, 5]
-list_of_numbers_2 = [3, 2, 1]
-list_of_numbers_3 = [10, 15, 3, 7]
-list_of_numbers_4 = list(range(1, 1001))
-
 def measureTime(method, n, *args):
     start = process_time()
     for _ in range(n):
         method(*args)
     end = process_time()
     return (end - start) / n
+
+###
+list_of_numbers_1 = [1, 2, 3, 4, 5]
+list_of_numbers_2 = [3, 2, 1]
+list_of_numbers_3 = [10, 15, 3, 7]
+list_of_numbers_4 = list(range(1, 1001))
 
 
 def array_product_mod(list_of_numbers):
@@ -45,7 +46,6 @@ def array_product_mod_non_division(list_of_numbers):
             print("Error divition by zero")
 
     return list_of_products
-
 
 
 repetitions = 1
