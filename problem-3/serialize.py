@@ -1,5 +1,8 @@
 
 from time import process_time
+from collections import deque 
+
+
 
 def measureTime(method, n, *args):
     start = process_time()
@@ -9,10 +12,6 @@ def measureTime(method, n, *args):
     return (end - start) / n
 
 ### 
-
-# Inpot node
-node = Node('root', Node('left', Node('left.left')), Node('right'))
-
 
 class Node:
     def __init__(self, val, left=None, right=None):
@@ -24,26 +23,27 @@ class Node:
 
 def serialize(root):
     if not root:
-        return None
-
-    left_subtree = serialize()
-    right_subtree = serialize()
-
-    return root.val + left_subtree + right_subtree
-
-
+        return 'X'
+    left_subtree = serialize(root.left)
+    right_subtree = serialize(root.right)
+    return root.val + ',' + left_subtree + ',' + right_subtree
 
 def deserialize(s):
+    # Initializing a queue 
+    nodes_left = deque(s)
+
+ #   return deserialize_helper(s,0)
 
 
+#def deserialize_helper(s,index)
 
 
-assert deserialize(serialize(node)).left.left.val == 'left.left'
+# Inpot node
+node = Node('root', Node('left', Node('left.left')), Node('right'))
+s = 'root,left,left.left,X,X,X,right,X,X,'
+s_list = s.split(',')
+
+print(serialize(node))
 
 
-repetitions = 1
-
-print(array_product_mod(list_of_numbers_1))
-print (measureTime(array_product_mod, repetitions, list_of_numbers_1) * 1000, 'ms')
-
-
+#assert deserialize(serialize(node)).left.left.val == 'left.left'
