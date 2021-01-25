@@ -1,6 +1,5 @@
 from getpass import getpass
 
-
 # NOT LIKE
 # username = input("Username: ")
 # password = input("Password: ")
